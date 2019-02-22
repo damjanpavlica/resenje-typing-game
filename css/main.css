@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.top-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 250px;
+}
+
+.top-part > div {
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-part h1 {
+    font-size: 55px;
+}
+
+#start {
+    padding: 5px 12px;
+    border: 1px solid #8e85f8;
+    color: #8e85f8;
+    border-radius: 5px;
+    background: white;
+    font-weight: 600;
+}
+
+#inputLetter {
+    padding: 5px 10px;
+    border: 1px solid #bdc5cc;
+    border-radius: 5px;
+}
+
+.letters {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.letters h2 {
+    color: #bdc5cc;
+    width: 16.66%;
+    margin-top: 50px;
+}
+
+aside {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    text-align: right;
+}
+
+aside h4:nth-child(1) {
+    color: #bdc5cc;
+}
+
+aside h4:nth-child(2) {
+    color: #29b3a5;
+}
+
+aside h4:nth-child(3) {
+    color: #e89ea9;
+}
+
+aside h4:nth-child(4) {
+    color: #8e85f8;
+}

@@ -1,16 +1,20 @@
 const radioButtons = document.querySelectorAll('input[type="radio"]');
-const numbers = [];
-for (let i = 1; i <= 26; i++) {
-  numbers.push(i);
-}
+let numbers = [];
 let speed = 3500;
+let intervalId;
 
 /* FUNKCIJE */
 
 function random() {
-  const index = Math.floor(Math.random() * numbers.length);
-  const izbaceno = numbers.splice(index, 1);
-  document.getElementById('number').innerText = izbaceno[0];
+  if (numbers.length) {
+    const index = Math.floor(Math.random() * numbers.length);
+    const izbaceno = numbers.splice(index, 1);
+    const broj = izbaceno[0];
+    document.getElementById('number').innerText = broj;
+  } else {
+    clearInterval(intervalId);
+    document.getElementById('number').innerText = "Igra je završena";
+  }
 }
 
 function handleSpeedChange() {
@@ -18,8 +22,13 @@ function handleSpeedChange() {
 }
 
 function init() {
+  numbers = [];
+  for (let i = 1; i <= 26; i++) {
+    numbers.push(i);
+  }
+  clearInterval(intervalId);
   random();
-  setInterval(random, speed);
+  intervalId = setInterval(random, speed);
 }
 
 /* DOGADJAJI */
